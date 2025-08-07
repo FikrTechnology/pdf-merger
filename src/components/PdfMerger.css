@@ -1,0 +1,108 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f4f8;
+}
+
+.pdf-merger-container {
+    max-width: 600px;
+    width: 100%;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 32px 24px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pdf-title {
+    text-align: center;
+    fint-size: 2.2rem;
+    color: #2d3748;
+    margin-bottom: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.pdf-dropzone {
+    border: 2px dashed #3182ce;
+    background: #ebf8ff;
+    padding: 28px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 32px;
+    transition: border-color 0.2s;
+    cursor: pointer;
+}
+
+.pdf-dropzone:hover {
+    border-color: #2b6cb0;
+    background: #bee3f8;
+}
+
+.pdf-list {
+    margin-bottom: 24px;
+}
+
+.pdf-card {
+    background: #f7fafc;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(49, 130, 206, 0.07);
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.pdf-card:hover {
+    box-shadow: 0 4px 16px rgba(49, 130, 206, 0.15);
+    transform: translateY(-2px) scale(1.02);
+}
+
+.pdf-merge-btn {
+    width: 100%;
+    padding: 14px 0;
+    background: linear-gradient(90deg, #3182ce, #63b3ed 100%);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(49, 130, 206, 0.10);
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.pdf-merge-btn:disabled:hover {
+    background: #cbd5e0;
+    color: #718096;
+    cursor: not-allowed;
+}
+
+.pdf-merge-btn:not(:disabled):hover {
+    background: linear-gradient(90deg, #2b6cb0, #63b3ed 100%);
+    box-shadow: 0 4px 16px rgba(49, 130, 206, 0.15);
+    cursor: pointer;
+}
+
+.pdf-remove-btn {
+    margin-left: 16px;
+    background: #e53e3e;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.pdf-remove-btn:hover {
+    background: #c53030;
+}

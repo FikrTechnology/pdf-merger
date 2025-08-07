@@ -1,0 +1,25 @@
+.pdf-item {
+    display: flex;
+    align-items: center;
+}
+
+.pdf-icon {
+    font-size: 2rem;
+    color: #e53e3e;
+    margin-right: 16px;
+}
+
+.pdf-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.pdf-name {
+    font-weight: 500;
+    color: #2d3748;
+}
+
+.pdf-size {
+    font-size: 0.85rem;
+    color: #718096;
+}

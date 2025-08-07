@@ -1,12 +1,61 @@
-# React + Vite
+# 🧾 PDF Merger
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sebuah aplikasi web sederhana untuk menggabungkan beberapa file PDF menjadi satu, dibangun menggunakan **React + Vite** dan berjalan sepenuhnya di sisi client (browser). Aman, cepat, dan tanpa perlu upload ke server.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Fitur
 
-## Expanding the ESLint configuration
+- ✅ Upload banyak file PDF sekaligus
+- 🔀 Ubah urutan file sebelum digabung
+- 📎 Gabungkan menjadi satu file PDF
+- 🔐 Semua proses dilakukan di browser (data tidak dikirim ke server)
+- 🌐 Dapat diakses secara langsung via GitHub Pages
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🌐 Demo
+
+🔗 [Coba Aplikasinya di Sini](https://fikrtechnology.github.io/pdf-merger/)
+
+---
+
+## 🛠 Teknologi yang Digunakan
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [pdf-lib](https://pdf-lib.js.org/) (atau library PDF lainnya)
+- [gh-pages](https://www.npmjs.com/package/gh-pages)
+
+---
+
+## 📦 Cara Install & Menjalankan Secara Lokal
+
+```bash
+# Clone repositori ini
+git clone https://github.com/FikrTechnology/pdf-merger.git
+
+# Masuk ke direktori project
+cd pdf-merger
+
+# Install dependencies
+npm install
+
+# Jalankan di mode development
+npm run dev
+```
+
+---
+
+## 🤝 Kontribusi
+
+Kontribusi terbuka untuk siapa saja!
+Silakan fork repo ini dan kirimkan Pull Request untuk fitur baru, perbaikan bug, atau peningkatan performa.
+
+---
+
+## 👨‍💻 Author
+
+Created by Fikri Technology
+
+---

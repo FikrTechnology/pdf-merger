@@ -6,6 +6,7 @@ const FileDropzone = ({
   onFilesAccepted,
   multiple = true,
   disabled = false,
+  accept = { "application/pdf": [".pdf"] },
   title = "Seret & lepas file PDF di sini",
   hint = "atau klik untuk memilih file dari perangkat Anda",
 }) => {
@@ -21,7 +22,7 @@ const FileDropzone = ({
     onDrop,
     multiple,
     disabled,
-    accept: { "application/pdf": [".pdf"] },
+    accept,
   });
 
   return (

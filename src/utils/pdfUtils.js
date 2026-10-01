@@ -82,4 +82,60 @@ export function getFriendlyErrorMessage(error) {
   return "Terjadi kesalahan saat memproses file PDF. Pastikan file valid lalu coba lagi.";
 }
 
+export function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
+}
+
+export function readFileAsDataUrl(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = () => reject(reader.error);
+    reader.readAsDataURL(file);
+  });
+}
+
+/** Reads natural pixel dimensions so placed images/signatures can keep their aspect ratio. */
+export function getImageDimensions(dataUrl) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve({ width: img.naturalWidth, height: img.naturalHeight });
+    img.onerror = () => reject(new Error("Gagal membaca dimensi gambar"));
+    img.src = dataUrl;
+  });
+}
+
+export function dataUrlToUint8Array(dataUrl) {
+  const base64 = dataUrl.split(",")[1] || "";
+  const binary = atob(base64);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i += 1) bytes[i] = binary.charCodeAt(i);
+  return bytes;
+}
+
+export function hexToRgb01(hex) {
+  const normalized = (hex || "#000000").replace("#", "");
+  const full = normalized.length === 3 ? normalized.split("").map((c) => c + c).join("") : normalized.padEnd(6, "0");
+  return {
+    r: (parseInt(full.slice(0, 2), 16) || 0) / 255,
+    g: (parseInt(full.slice(2, 4), 16) || 0) / 255,
+    b: (parseInt(full.slice(4, 6), 16) || 0) / 255,
+  };
+}
+
+/** Computes the draw origin so rotated text (e.g. a diagonal watermark) stays visually centered on (centerX, centerY). */
+export function computeCenteredTextOrigin(centerX, centerY, textWidth, textHeight, rotationDeg) {
+  const angleRad = (rotationDeg * Math.PI) / 180;
+  const halfW = textWidth / 2;
+  const halfH = textHeight / 2;
+  const dirX = Math.cos(angleRad);
+  const dirY = Math.sin(angleRad);
+  const perpX = -Math.sin(angleRad);
+  const perpY = Math.cos(angleRad);
+  return {
+    x: centerX - halfW * dirX - halfH * perpX,
+    y: centerY - halfW * dirY - halfH * perpY,
+  };
+}
+
 export { pdfjsLib };

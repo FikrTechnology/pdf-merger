@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaCut, FaLayerGroup, FaObjectGroup, FaSignature } from 'react-icons/fa';
+import { FaCompressAlt, FaCut, FaImages, FaLayerGroup, FaObjectGroup, FaSignature } from 'react-icons/fa';
 import Header from './components/layout/Header.jsx';
 import TabNavigation from './components/layout/TabNavigation.jsx';
 import ToastContainer from './components/common/ToastContainer.jsx';
@@ -7,12 +7,16 @@ import PdfMerger from './components/PdfMerger.jsx';
 import PdfSplitter from './components/PdfSplitter.jsx';
 import PdfEditor from './components/PdfEditor.jsx';
 import PageOrganizer from './components/PageOrganizer.jsx';
+import PdfCompressor from './components/PdfCompressor.jsx';
+import ImageToPdf from './components/ImageToPdf.jsx';
 
 const TABS = [
   { id: 'merge', label: 'Merge PDF', icon: FaObjectGroup, Component: PdfMerger },
   { id: 'split', label: 'Split & Extract', icon: FaCut, Component: PdfSplitter },
   { id: 'editor', label: 'Edit, Sign & Watermark', icon: FaSignature, Component: PdfEditor },
   { id: 'organizer', label: 'Page Organizer', icon: FaLayerGroup, Component: PageOrganizer },
+  { id: 'compress', label: 'Kompres PDF', icon: FaCompressAlt, Component: PdfCompressor },
+  { id: 'image-to-pdf', label: 'Gambar ke PDF', icon: FaImages, Component: ImageToPdf },
 ];
 
 function App() {
